@@ -6,6 +6,7 @@
   *  notIE function
   *  browser.executeAsyncScript method
   *  browser.ignoreSynchronization method
+  *  Overrides with addMockModule()
 * Performance
   * Sharding
 * Run & Debugging
