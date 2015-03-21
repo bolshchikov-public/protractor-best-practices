@@ -7,6 +7,10 @@
   *  browser.executeAsyncScript method
   *  browser.ignoreSynchronization method
   *  Overrides with addMockModule()
+* Tricks
+  * Choose option
+  * Mouse hover
+  * Right mouse button click
 * Performance
   * Sharding
 * Run & Debugging
