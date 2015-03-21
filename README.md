@@ -1,9 +1,11 @@
 # Protractor: Best Practices
 
-* Tricks
+* Code
   *  Set screen size
   *  Page objects
   *  notIE function
+  *  browser.executeAsyncScript method
+  *  browser.ignoreSynchronization method
 * Performance
   * Sharding
 * Run & Debugging
