@@ -16,3 +16,4 @@
 * Run & Debugging
   * Node run configuration in WebStorm   
   * Sauce Labs & tunnel
+  * Elementor
