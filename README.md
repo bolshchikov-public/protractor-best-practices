@@ -1,19 +1,21 @@
 # Protractor: Best Practices
 
-* Code
+* Best practices
   *  Set screen size
   *  Page objects
-  *  notIE function
-  *  browser.executeAsyncScript method
-  *  browser.ignoreSynchronization method
   *  Overrides with addMockModule()
 * Tricks
   * Choose option
   * Mouse hover
   * Right mouse button click
+  * notIE function
+  * browser.executeAsyncScript method
+  * browser.ignoreSynchronization method
 * Performance
   * Sharding
 * Run & Debugging
   * Node run configuration in WebStorm   
-  * Sauce Labs & tunnel
+  * Element explorer
   * Elementor
+  * Sauce Labs & tunnel
+  
