@@ -30,7 +30,9 @@
 The configuration file is the heart of running protractor. Thus, proper settings might make our life much easier. 
 
 #### Sharding
-Sharding property allows to share tests between different browser instances and run them in parallel. For that, we need to set two propties 
+**Problem**: you have too many tests and now it takes too much time to run them.
+
+**Solution**: sharding property allows to share tests between different browser instances and run them in parallel. For that, we need to set two propties 
 ```js
 shardTestFiles: false,
 maxInstances: 2,
@@ -38,7 +40,9 @@ maxInstances: 2,
 where `shardTestFiles` specifies whether sharding is enabled and `maxInstances` specified the number of browser instances.
 
 #### Params Object
-In case you need to set some variables that we used in many test, `params` object can be used exaclt for that. Set user login and password for authentication, 
+**Problem**: you have several general variables that are shared to between different tests. In case one of them changes, we don't wanna go over all tests and update the value.
+
+**Solution**: `params` object can be used exactly for that. Set user login and password for authentication, 
 ```js
 params = {
   username: 'Sergey'
