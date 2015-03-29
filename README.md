@@ -1,13 +1,10 @@
 # Protractor: Best Practices
 
 * Best practices
-  * Set config file
-    * Set browser sharding
-    * Set params object
+  * Set params object
   * Set screen size
   * Page objects
-  * Overrides with addMockModule()
-  * Turned off animation be default
+  * Folder structure
 * Tricks
   * Choose option
   * Mouse hover
@@ -17,6 +14,10 @@
   * browser.ignoreSynchronization method
   * [data-hooks for HTML](https://github.com/wix/wix-protractor-helpers/blob/master/src/locators.js)
   * [Macthers](https://github.com/wix/wix-protractor-helpers/blob/master/src/matchers.js)
+* Performance
+  * Set browser sharding
+  * Turned off animation be default
+  * Check as many in one test as you can
 * Run & Debugging
   * [Node run configuration](https://github.com/angular/protractor/blob/master/docs/debugging.md#setting-up-webstorm-for-debugging) in WebStorm/Intellij
   * [Element explorer](https://github.com/angular/protractor/blob/master/docs/debugging.md#testing-out-protractor-interactively)
@@ -25,20 +26,9 @@
   
 ---
 
-### Set Config File
-The configuration file is the heart of running protractor. Thus, proper settings might make our life much easier. 
+## Best Practices
 
-#### Sharding
-**Problem**: You have too many tests and now it takes too much time to run them.
-
-**Solution**: Sharding property allows to share tests between different browser instances and run them in parallel. For that, we need to set two propties 
-```js
-shardTestFiles: false,
-maxInstances: 2,
-```
-where `shardTestFiles` specifies whether sharding is enabled and `maxInstances` specified the number of browser instances.
-
-#### Params Object
+### Params Object
 **Problem**: You have several general variables that are shared to between different tests. In case one of them changes, we don't wanna go over all tests and update the value.
 
 **Solution**: `params` object can be used exactly for that. Set user login and password for authentication, 
@@ -54,7 +44,7 @@ and from the test you can use them via `brower.params.username`.
 
 **Solution**: It's quite trivial. Just the the window's width and height parameters before every test. For example,
 ```js
-browser.setSize(1024, 768);
+browser.setSize(1280, 1024);
 ```
 
 ### Page Objects
@@ -91,6 +81,67 @@ describe('Filters Page', function () {
   
 });
 ```
+### Folder Structure
+**Problem**: Whenever you are starting to write many tests, they easily become very hairy - long, complicated and w/o any proper strture. 
+
+**Solution**: Clean and tidy folder structure, e.g.:
+e2e
+ |- fragments
+ |- libs
+ |- modal
+ |- pages
+ |- spec
+
+
+## Performance
+
+### Sharding
+**Problem**: You have too many tests and now it takes too much time to run them.
+
+**Solution**: Sharding property allows to share tests between different browser instances and run them in parallel. For that, we need to set two propties 
+```js
+shardTestFiles: false,
+maxInstances: 2,
+```
+where `shardTestFiles` specifies whether sharding is enabled and `maxInstances` specified the number of browser instances.
+
+### Diable animations for all tests
+**Problem**: See above
+**Solution**: Disable animation in `onPrepare` callback
+
+```js
+onPrepare: function () {
+  var disableNgAnimate = function () {
+    angular.module('disableNgAnimate', []).run(function ($animate) {
+      $animate.enabled(false);
+    });
+  };
+
+  browser.addMockModule('disableNgAnimate', disableNgAnimate);
+
+  var disableCssAnimate = function () {
+    angular.module('disableCssAnimate', []).run(function () {
+      var style = document.createElement('style');
+      style.type = 'text/css';
+      style.innerHTML = '* {' +
+        '-webkit-transition: none !important;' +
+        '-moz-transition: none !important;' +
+        '-o-transition: none !important;' +
+        '-ms-transition: none !important;' +
+        'transition: none !important;' +
+        '}';
+      document.getElementsByTagName('head')[0].appendChild(style);
+    });
+  };
+
+  browser.addMockModule('disableCssAnimate', disableCssAnimate);
+}
+```
+
+### Many checks in one test
+**Problem**: See above
+**Solution**: As many `expect` in one `it` clause.
+
 
 ### Sauce Labs
 If case of CI, we would like to run our e2e tests on all major browsers and diffrent OS's. For that purpose, we can use Sauce Labs with credentials specified directly in protractor config file.
