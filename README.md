@@ -13,7 +13,7 @@
   * [browser.executeAsyncScript method](/Tricks.md#run-javascript-code)
   * [browser.ignoreSynchronization method](/Tricks.md#test-non-angular-apps)
   * [runIfNotIE function](/Tricks.md#ignore-ie) 
-* [Performance](/Performance.md
+* [Performance](/Performance.md)
   * [Set browser sharding](/Performance.md#sharding)
   * [Turned off animation be default](/Performance.md#disable-animations)
   * [Balance `it`s and `expect`s](/Performance.md#checks-amount)
