@@ -16,7 +16,7 @@
 * [Performance](/Performance.md)
   * Set browser sharding
   * Turned off animation be default
-  * Balance its and expects
+  * Balance `it`s and `expect`s
 * [Run & Debugging](/Run.md)
   * [Node run configuration](https://github.com/angular/protractor/blob/master/docs/debugging.md#setting-up-webstorm-for-debugging) in WebStorm/Intellij
   * [Element explorer](https://github.com/angular/protractor/blob/master/docs/debugging.md#testing-out-protractor-interactively)

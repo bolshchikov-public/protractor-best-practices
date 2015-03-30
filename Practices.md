@@ -74,3 +74,26 @@ by.addLocator('dataHook', function (hook, optParentElement, optRootSelector) {
 ```js
 expect(element(by.dataHook('load-items')).isDisplayed()).toBe(true);
 ```
+
+### Matchers
+**Problem**: When the test grows as well is logic and checks, reading the test become hard. It is not clear what the test checks. As a result different people might write duplicate tests.
+
+**Solution**: Using jasmine matchers, we can write assertions that make much more sense and reads like almost plain English.
+
+```js
+// define assertion
+this.addMatchers({
+  toHaveClass: function (className) {
+    var _this = this;
+    return this.actual.getAttribute('class').then(function (classes) {
+      helpers.createMessage(_this, 'Expected ' + classes + '{{not}}to have class ' + className);
+      return classes.split(' ').indexOf(className) !== -1;
+    });
+  }
+});
+```
+
+```js
+// use
+expect($('#about')).toHaveClass('collapse');
+```
