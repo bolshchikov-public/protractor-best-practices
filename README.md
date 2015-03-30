@@ -1,4 +1,4 @@
-# Opiniated List of Protractor's Tips & Tricks
+# Opinionated List of Protractor's Tips & Tricks
 
 * [Best practices](/Practices.md)
   * [Set screen size](/Practices.md#set-screen-size)
