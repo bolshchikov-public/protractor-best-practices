@@ -7,13 +7,13 @@
   * [Locators via data-hooks](/Practices.md#locators)
   * [Matchers](/Practices.md#matchers)
 * [Tricks](/Tricks.md)
-  * Set params object
-  * Choose option
-  * Right mouse button click
-  * ifNotIE function
-  * browser.executeAsyncScript method
-  * browser.ignoreSynchronization method
-* [Performance](/Performance.md)
+  * [Set params object](/Tricks.md#params-object)
+  * [Choose option](/Tricks.md#choose-option)
+  * [Right mouse button click](/Tricks.md#right-button-click)
+  * [browser.executeAsyncScript method](/Tricks.md#run-javascript-code)
+  * [browser.ignoreSynchronization method](/Tricks.md#test-non-angular-apps)
+  * [runIfNotIE function](/Tricks.md#ignore-ie) 
+* [Performance](/Performance.md
   * [Set browser sharding](/Performance.md#sharding)
   * [Turned off animation be default](/Performance.md#disable-animations)
   * [Balance `it`s and `expect`s](/Performance.md#checks-amount)
