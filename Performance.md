@@ -10,8 +10,9 @@ maxInstances: 2,
 ```
 where `shardTestFiles` specifies whether sharding is enabled and `maxInstances` specified the number of browser instances.
 
-### Diable animations for all tests
+### Diable animations
 **Problem**: See above
+
 **Solution**: Disable animation in `onPrepare` callback
 
 ```js
@@ -43,6 +44,7 @@ onPrepare: function () {
 }
 ```
 
-### Many checks in one test
+### Checks amount
 **Problem**: See above
+
 **Solution**: The right balance between amount of `expect`s in `it` clause. As a rule of thumb: 4-5.
