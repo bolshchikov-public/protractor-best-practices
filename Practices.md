@@ -1,16 +1,5 @@
 ## Best Practices
 
-### Params Object
-**Problem**: You have several general variables that are shared to between different tests. In case one of them changes, we don't wanna go over all tests and update the value.
-
-**Solution**: `params` object can be used exactly for that. Set user login and password for authentication, 
-```js
-params = {
-  username: 'Sergey'
-}
-```
-and from the test you can use them via `brower.params.username`.
-
 ### Set Screen Size
 **Problem**: Whenever protractor opens the browser, we don't know the size of the opened window. This means that some visual elements that we expect to be visible - are hidden. This will lead to the failing test because your selectors will not be clickable.
 
@@ -64,3 +53,24 @@ e2e
  |- modals
  |- pages
  |- spec
+
+### Locators
+**Problem**: Whenever your html is changed (removed id, different class, or another model name), your tests are going to break.
+
+**Solution**: Use additional locators - data hooks. HTML data attributes that are set to the relevant and significant parts of the page that are used in the test.
+
+```js
+// define new locator
+by.addLocator('dataHook', function (hook, optParentElement, optRootSelector) {
+	var using = optParentElement || document.querySelector(optRootSelector) || document;
+	return using.querySelector('[data-hook=\'' + hook + '\']');
+});
+```
+
+```html
+<button class="button load-more" ng-click="showMore()" data-hook="load-items">Show More</button>	
+```
+
+```js
+expect(element(by.dataHook('load-items')).isDisplayed()).toBe(true);
+```

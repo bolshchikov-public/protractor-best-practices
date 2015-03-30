@@ -1,4 +1,4 @@
-# Protractor: Tips & Tricks
+# Opiniated List of Protractor's Tips & Tricks
 
 * [Best practices](/Practices.md)
   * Set screen size

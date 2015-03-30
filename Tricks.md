@@ -1,5 +1,17 @@
 ## Tricks
 
+### Params Object
+**Problem**: You have several general variables that are shared to between different tests. In case one of them changes, we don't wanna go over all tests and update the value.
+
+**Solution**: `params` object can be used exactly for that. Set user login and password for authentication, 
+```js
+params = {
+  username: 'Sergey'
+}
+```
+and from the test you can use them via `brower.params.username`.
+
+
 ### Choose option
 **Problem**: how to set a new value in select tag
 
