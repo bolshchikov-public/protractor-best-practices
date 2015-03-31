@@ -5,6 +5,8 @@
 
 **Solution**: `params` object can be used exactly for that. Set user login and password for authentication, 
 ```js
+// protractor-conf.js
+
 params = {
   username: 'Sergey'
 }
