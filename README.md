@@ -20,4 +20,4 @@
 * [Run & Debugging](/Run.md)
   * [Node run configuration in WebStorm/Intellij](/Run.md#ide-integration)
   * [Element explorer](/Run.md#element-explorer--elementor)
-  * Sauce Labs & tunnel, and screenshots
+  * [CI Integration](/Run.md#ci-integration)

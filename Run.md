@@ -19,5 +19,17 @@ cd node_modules/protractor/bin
 
 Additionally, you can use [elementor](https://github.com/andresdominguez/elementor) extension which works as a visualization tool (chrome extension) for element explorer.
 
-### Sauce Labs
-If case of CI, we would like to run our e2e tests on all major browsers and diffrent OS's. For that purpose, we can use Sauce Labs with credentials specified directly in protractor config file.
+### CI Integration
+**Problem**: Run tests in CI
+
+**Solution**: If case of CI, we can run our e2e tests on all major browsers and diffrent OS's. For that purpose, we can use [Sauce Labs](https://saucelabs.com/) with credentials specified directly in protractor config file.
+```js
+export.config = {
+	...
+	sauceUser: process.env.SAUCE_USERNAME,
+	sauceKey: process.env.SAUCE_ACCESS_KEY,
+	capabilities['tunnel-identifier']: process.env.BUILD_NUMBER,
+	...
+}
+```
+If sauceKey and sauceUser are specified, seleniumServerJar will be ignored. The tests will run remotely via Sauce Labs.
