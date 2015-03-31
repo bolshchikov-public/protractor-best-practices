@@ -11,7 +11,7 @@ browser.driver.manage().window().setSize(1280, 1024);
 ### Page Objects
 **Problem**: When your test have many locators that are repeated in different tests, a tiny change might cause a painfull process of fixing many tests. 
 
-**Solution**: [Page Objects](http://martinfowler.com/bliki/PageObject.html) and Page Fragements introduce additional level of abstraction which describes the structure of your page. Object contains semantically siginificant structural parts parts like lists, as well as action that can be done on the page, e.g. filling the form, submitting, etc.
+**Solution**: [Page Objects](http://martinfowler.com/bliki/PageObject.html) and Page Fragements introduce additional level of abstraction which describes the structure of your page. Object contains semantically significant structural parts parts like lists, as well as action that can be done on the page, e.g. filling the form, submitting, etc.
 ```js
 // filters fragment
 function FiltersFragment() {
@@ -44,7 +44,7 @@ describe('Filters Page', function () {
 ```
 
 ### Folder Structure
-**Problem**: Whenever you are starting to write many tests, they easily become very hairy - long, complicated and w/o any proper strture. 
+**Problem**: Whenever you are starting to write many tests, they easily become very hairy - long, complicated and w/o any proper structure. 
 
 **Solution**: Clean and tidy folder structure, e.g.:
 ```bash
@@ -74,7 +74,9 @@ by.addLocator('dataHook', function (hook, optParentElement, optRootSelector) {
 ```
 
 ```js
-expect(element(by.dataHook('load-items')).isDisplayed()).toBe(true);
+it('should display load more button', function () {
+  expect(element(by.dataHook('load-items')).isDisplayed()).toBe(true);  
+});
 ```
 
 ### Matchers
