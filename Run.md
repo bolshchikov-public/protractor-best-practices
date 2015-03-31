@@ -7,10 +7,17 @@
 ![run-set](/images/run-set.png)
 ![run-debug](/images/run-debug.png)
 
-### Element explorer
+### Element explorer & Elementor
 **Problem**: Something weird is going on and something doesn't work.
 
-**Solution**: Interactive debugging with [element explorer](http://angular.github.io/protractor/#/debugging#testing-out-protractor-interactively) where can type any protractor command.
+**Solution**: Interactive debugging with [element explorer](http://angular.github.io/protractor/#/debugging#testing-out-protractor-interactively) where can type any protractor command. Launch the element explorer with the following code
+```bash
+webdriver-manager start
+cd node_modules/protractor/bin
+./elementexplorer.js
+```
+
+Additionally, you can use [elementor](https://github.com/andresdominguez/elementor) extension which works as a visualization tool (chrome extension) for element explorer.
 
 ### Sauce Labs
 If case of CI, we would like to run our e2e tests on all major browsers and diffrent OS's. For that purpose, we can use Sauce Labs with credentials specified directly in protractor config file.
