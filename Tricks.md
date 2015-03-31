@@ -11,7 +11,7 @@ params = {
   username: 'Sergey'
 }
 ```
-and from the test you can use them via `brower.params.username`.
+and from the test you can use them via `browser.params.username`.
 
 
 ### Choose option
