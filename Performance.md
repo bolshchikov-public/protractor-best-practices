@@ -5,8 +5,8 @@
 
 **Solution**: Sharding property allows to share tests between different browser instances and run them in parallel. For that, we need to set two propties 
 ```js
-shardTestFiles: false,
-maxInstances: 2,
+shardTestFiles: true,
+maxInstances: 4,
 ```
 where `shardTestFiles` specifies whether sharding is enabled and `maxInstances` specified the number of browser instances.
 
