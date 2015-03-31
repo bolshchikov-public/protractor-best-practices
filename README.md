@@ -19,6 +19,5 @@
   * [Balance `it`s and `expect`s](/Performance.md#checks-amount)
 * [Run & Debugging](/Run.md)
   * [Node run configuration in WebStorm/Intellij](/Run.md#ide-integration)
-  * [Element explorer](/Run.md#element-explorer)
-  * [Elementor](https://github.com/andresdominguez/elementor)
+  * [Element explorer](/Run.md#element-explorer--elementor)
   * Sauce Labs & tunnel, and screenshots
