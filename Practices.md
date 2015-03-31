@@ -3,9 +3,9 @@
 ### Set Screen Size
 **Problem**: Whenever protractor opens the browser, we don't know the size of the opened window. This means that some visual elements that we expect to be visible - are hidden. This will lead to the failing test because your selectors will not be clickable.
 
-**Solution**: It's quite trivial. Just the the window's width and height parameters before every test. For example,
+**Solution**: It's quite trivial. Just set the window's width and height parameters before every test. For example,
 ```js
-browser.setSize(1280, 1024);
+browser.driver.manage().window().setSize(1280, 1024);
 ```
 
 ### Page Objects
@@ -47,12 +47,14 @@ describe('Filters Page', function () {
 **Problem**: Whenever you are starting to write many tests, they easily become very hairy - long, complicated and w/o any proper strture. 
 
 **Solution**: Clean and tidy folder structure, e.g.:
+```bash
 e2e
  |- fragments
  |- libs
  |- modals
  |- pages
  |- spec
+```
 
 ### Locators
 **Problem**: Whenever your html is changed (removed id, different class, or another model name), your tests are going to break.
