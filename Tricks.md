@@ -25,6 +25,14 @@ function chooseOption(val) {
 }
 ```
 
+You can also select an `<option>` with `by.cssContainingText`:
+
+```js
+function chooseOption(label) {
+  return element(by.cssContainingText('option', label)).click()
+}
+```
+
 ### Right button click
 **Problem**: Classical click is simple, but how to do right button click?
 
