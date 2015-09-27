@@ -15,7 +15,7 @@
   * [runIfNotIE function](/Tricks.md#ignore-ie) 
 * [Performance](/Performance.md)
   * [Set browser sharding](/Performance.md#sharding)
-  * [Turned off animation be default](/Performance.md#disable-animations)
+  * [Turned off animation by default](/Performance.md#disable-animations)
   * [Balance `it`s and `expect`s](/Performance.md#checks-amount)
 * [Run & Debugging](/Run.md)
   * [Node run configuration in WebStorm/Intellij](/Run.md#ide-integration)
