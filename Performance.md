@@ -10,7 +10,7 @@ maxInstances: 4,
 ```
 where `shardTestFiles` specifies whether sharding is enabled and `maxInstances` specified the number of browser instances.
 
-### Diable animations
+### Disable animations
 **Problem**: See above
 
 **Solution**: Disable animation in `onPrepare` callback
